@@ -22,7 +22,6 @@ for cat in equipment_categories:
 
 @bot.message_handler(commands=['start'])
 def start_command(message: types.Message):
-    """Функция вывода приветственного сообщения и запроса отправки контактного номера телефона"""
     user_id = message.from_user.id
     full_name = message.from_user.full_name
     username = message.from_user.username
