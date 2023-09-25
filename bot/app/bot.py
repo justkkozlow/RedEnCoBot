@@ -128,7 +128,7 @@ def get_equipment(callback: types.CallbackQuery):
         if equipment.exists():
             markup = kb.generate_equipment_markup(equipment, previous_state)
             bot.edit_message_text(chat_id=callback.message.chat.id, message_id=callback.message.message_id,
-                                  text="Выберите технику:",
+                                  text=text.CHOOSE_EQUIPMENT_MESSAGE,
                                   reply_markup=markup)
         else:
             state_manager.set_user_state(user_id, 'perfences')

@@ -9,20 +9,12 @@ callback_data_values = []
 
 
 def get_contact_keyboard():
-    """
-    Статичная клавиатура запроса контактного номера телефона клиента
-    :return: Кнопка "Отправить контакт"
-    """
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
     keyboard.add(KeyboardButton(text='Отправить контакт', request_contact=True))
     return keyboard
 
 
 def client_status_keyboard():
-    """
-    Статичная клавиатура выбора статуса клиента
-    :return: Инлайн-клавиатура
-    """
     keyboard = InlineKeyboardMarkup()
     keyboard.row(
         InlineKeyboardButton(text='🙂Физическое лицо', callback_data='Физическое лицо'),
@@ -52,9 +44,6 @@ def client_target_keyboard():
 
 
 def personal_preferences_keyboard():
-    """
-    Статичная клавиатура для выбора назначения использования техники
-    """
     keyboard = InlineKeyboardMarkup(row_width=1)
     keyboard.add(
         InlineKeyboardButton(text='Рассматриваю как дополнительный доход', callback_data='spin_off'),
@@ -74,9 +63,6 @@ def personal_preferences_keyboard():
 
 
 def budget_keyboard(previous_state):
-    """
-    Статичная клавиатура для выбора бюджета клиента
-    """
     keyboard = InlineKeyboardMarkup(row_width=1)
     keyboard.add(
         InlineKeyboardButton(text='До 600 тыс. руб.', callback_data='up_to_600t'),
