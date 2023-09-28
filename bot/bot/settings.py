@@ -29,7 +29,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = [os.getenv('HOST', '0.0.0.0')]
+# ALLOWED_HOSTS = [os.getenv('HOST', '0.0.0.0')]
+ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://81ae-159-253-170-130.ngrok-free.app']
 
 # Application definition
@@ -81,7 +82,7 @@ WSGI_APPLICATION = 'bot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / os.getenv('NAME'),
+        'NAME': BASE_DIR / f'{os.getenv("NAME")}.sqlite3',
     }
 }
 

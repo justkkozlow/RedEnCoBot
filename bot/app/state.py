@@ -1,9 +1,11 @@
 import sqlite3
 
+from django.conf import settings
+
 
 class UserStateManager:
-    def __init__(self, db_path='./db.sqlite3'):
-        self.db_path = db_path
+    def __init__(self):
+        self.db_path = settings.DATABASES['default']['NAME']
         self.previous_states = {}
 
     def create_table(self):
